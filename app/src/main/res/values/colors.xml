@@ -7,4 +7,5 @@
     <color name="red_secundary">#FF5C5C</color>
     <color name="red_terciary">#FF7C7C</color>
     <color name="dark">#1c1b20</color>
+    <color name="gray_text">#888888</color>
 </resources>

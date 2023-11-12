@@ -4,4 +4,10 @@
     <string name="programa_o">Programação</string>
     <string name="p_gina_inicial">Página Inicial</string>
     <string name="palestrantes">Palestrantes</string>
+    <string name="foto_do_palestrante">Foto do palestrante</string>
+    <string name="nome_do_palestrante">Nome do Palestrante</string>
+    <string name="empresa_do_palestrante">Empresa do palestrante</string>
+    <string name="descricao_palestrante">Descricao do candidato listado aqui para ser exibido aos usuários finais</string>
+    <string name="conheca">Conheça</string>
+    <string name="carregando_imagem">Carregando Imagem</string>
 </resources>
