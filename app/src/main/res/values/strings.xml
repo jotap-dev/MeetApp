@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">MeetApp</string>
+    <string name="bot_o_de_notifica_es">Botão de notificações</string>
+    <string name="programa_o">Programação</string>
+    <string name="p_gina_inicial">Página Inicial</string>
+    <string name="palestrantes">Palestrantes</string>
+</resources>
