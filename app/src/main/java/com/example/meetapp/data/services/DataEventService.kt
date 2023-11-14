@@ -16,6 +16,21 @@ interface DataEventService {
         @Query(value = "d_rdhid", encoded = true) key : String
     ) : Call<JsonObject>
 
+    @GET("atividades_horarios?sort=data_atividade&direction=DESC&limit=200")
+    fun getSchedules(
+        @Query(value = "d_rdhid", encoded = true) key : String
+    ) : Call<JsonObject>
+
+    @GET("parceiros?sort=ordem&direction=ASC&limit=200")
+    fun getColaborators(
+        @Query(value = "d_rdhid", encoded = true) key : String
+    ) : Call<JsonObject>
+
+    @GET("apps/20/notificacoes?status=3&sort=id&direction=desc&limit=200&servico_id=1")
+    fun getNotifications(
+        @Query(value = "d_rdhid", encoded = true) key : String
+    ) : Call<JsonObject>
+
     companion object{
 
         private val dataEventService : DataEventService by lazy{

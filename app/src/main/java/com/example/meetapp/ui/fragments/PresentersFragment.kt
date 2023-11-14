@@ -1,5 +1,6 @@
 package com.example.meetapp.ui.fragments
 
+import android.content.Intent
 import android.os.Bundle
 import android.util.Log
 import android.view.LayoutInflater
@@ -11,6 +12,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
+import com.example.meetapp.PresenterDescriptionActivity
 import com.example.meetapp.data.models.presenter.Presenter
 import com.example.meetapp.data.repositories.PresentersRepository
 import com.example.meetapp.data.services.DataEventService
@@ -20,7 +22,9 @@ import com.example.meetapp.ui.viewmodels.PresenterViewModel
 import com.example.meetapp.ui.viewmodels.PresenterViewModelFactory
 
 class PresentersFragment: Fragment() {
-    private lateinit var adapter: PresentersListAdapter
+    private val adapter = PresentersListAdapter{presenter ->
+        openPresenter(presenter)
+    }
     private lateinit var recyclerView: RecyclerView
     private lateinit var binding: FragmentPresentersBinding
     private lateinit var presenterViewModel: PresenterViewModel
@@ -33,9 +37,8 @@ class PresentersFragment: Fragment() {
     ): View {
         binding = FragmentPresentersBinding.inflate(inflater)
 
-        this.adapter = PresentersListAdapter()
         this.recyclerView = binding.recyclerViewPresenters
-        recyclerView.adapter = this.adapter
+        recyclerView.adapter = adapter
         recyclerView.layoutManager = LinearLayoutManager(view?.context)
 
         presenterViewModel =  ViewModelProvider(this, PresenterViewModelFactory(PresentersRepository(dataEventService))).get(
@@ -82,4 +85,24 @@ class PresentersFragment: Fragment() {
         adapter.setPresentersList(presenters)
 
     }
+
+    private fun openPresenter(presenter: Presenter) {
+        val id = presenter.id
+        presenterViewModel.allPresentersList.observe(this) { presenters ->
+            for (i in presenters) {
+                if (i.id == id) {
+                    startActivity(Intent(view?.context, PresenterDescriptionActivity::class.java)
+                        .putExtra("nome", i.nome)
+                        .putExtra("empresa", i.empresa)
+                        .putExtra("image", i.imagem)
+                        .putExtra("description", i.descricao)
+                        .putExtra("schedules", i.atividades.toString())
+                    )
+                }
+            }
+        }
+
+
+    }
+
 }

@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="30dp"
+    tools:context=".PresenterDescriptionActivity">
+
+    <com.google.android.material.card.MaterialCardView
+        android:id="@+id/materialCardView_desc"
+        style="@style/Widget.Material3.CardView.Outlined"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_margin="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:strokeWidth="1dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:padding="10dp">
+
+            <ImageView
+                android:id="@+id/presenter_image_desc"
+                android:layout_width="130dp"
+                android:layout_height="180dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="0dp"
+                android:adjustViewBounds="true"
+                android:background="@drawable/imagem_cardview_shape"
+                android:contentDescription="@string/foto_do_palestrante"
+                android:padding="0dp"
+                android:scaleType="centerCrop" />
+
+            <TextView
+                android:id="@+id/presenter_name_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentTop="true"
+                android:layout_marginHorizontal="15dp"
+                android:layout_toEndOf="@id/presenter_image_desc"
+                android:text="@string/nome_do_palestrante"
+                android:textSize="18sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/presenter_company_desc"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/presenter_name_desc"
+                android:layout_marginStart="15dp"
+                android:layout_marginTop="5dp"
+                android:layout_marginEnd="15dp"
+                android:layout_marginBottom="5dp"
+                android:layout_toEndOf="@id/presenter_image_desc"
+                android:text="@string/empresa_do_palestrante"
+                android:textSize="14sp" />
+
+            <TextView
+                android:id="@+id/presenter_description_desc"
+                android:layout_width="200dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/presenter_company_desc"
+                android:layout_marginStart="15dp"
+                android:layout_marginEnd="10dp"
+                android:layout_marginBottom="10dp"
+                android:layout_toEndOf="@id/presenter_image_desc"
+                android:maxHeight="120dp"
+                android:maxLength="150"
+                android:text="@string/descricao_palestrante"
+                android:textColor="@color/gray_text" />
+
+
+        </RelativeLayout>
+
+
+    </com.google.android.material.card.MaterialCardView>
+
+    <TextView
+        android:id="@+id/schedules_title_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/atividades"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/materialCardView_desc" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recycler_view_presenters_desc"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        tools:listitem="@layout/schedule_item_list"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/schedules_title_desc" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>

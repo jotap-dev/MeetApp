@@ -17,7 +17,7 @@ import coil.request.ImageRequest
 import com.example.meetapp.R
 import com.example.meetapp.data.models.presenter.Presenter
 
-class PresentersListAdapter : ListAdapter<Presenter, PresentersListAdapter.PresenterViewHolder>(PresenterComparator()) {
+class PresentersListAdapter(private val onItemClicked: (Presenter) -> Unit) : ListAdapter<Presenter, PresentersListAdapter.PresenterViewHolder>(PresenterComparator()) {
 
     private var presentersList = mutableListOf<Presenter>()
 
@@ -32,7 +32,7 @@ class PresentersListAdapter : ListAdapter<Presenter, PresentersListAdapter.Prese
 
     override fun onBindViewHolder(holder: PresenterViewHolder, position: Int) {
         val current = presentersList[position]
-        holder.bind(current)
+        holder.bind(current, onItemClicked)
     }
 
     class PresenterViewHolder(itemView: View): RecyclerView.ViewHolder(itemView){
@@ -42,19 +42,20 @@ class PresentersListAdapter : ListAdapter<Presenter, PresentersListAdapter.Prese
         private val descricaoView: TextView = itemView.findViewById(R.id.presenter_description)
 
         @SuppressLint("SetTextI18n")
-        fun bind(presenter: Presenter){
+        fun bind(presenter: Presenter, onItemClicked: (Presenter) -> Unit){
             nomeView.text = presenter.nome
             empresaView.text = presenter.empresa
             descricaoView.text = Html.fromHtml(presenter.descricao, Html.FROM_HTML_MODE_LEGACY).trim()
             Log.i("URL :" , presenter.imagem)
-            /*Glide.with(itemView.context)
-                .load(presenter.imagem)
-                .placeholder(R.drawable.placeholder2)
-                .diskCacheStrategy(DiskCacheStrategy.RESOURCE)
-                .into(imagemView)*/
+
+            //As imagens da API(apenas elas, outras não) não estavam sendo carregadas em conjunto, então coloquei uma imagem padrão
             imagemView.load("https://doity.com.br/media/doity/palestrantes/21449_palestrante.png") {
                 crossfade(true)
                 placeholder(R.drawable.placeholder2)
+            }
+
+            itemView.setOnClickListener { presenter
+                onItemClicked(presenter)
             }
         }
 

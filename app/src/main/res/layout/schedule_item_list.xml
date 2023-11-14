@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+    <com.google.android.material.card.MaterialCardView
+        xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="150dp"
+        style="@style/Widget.Material3.CardView.Outlined"
+        android:layout_margin="10dp"
+        app:strokeWidth="1dp"
+        app:cardCornerRadius="5dp"
+        >
+    <LinearLayout
+        android:id="@+id/schedule_custom_badge"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:gravity="center_vertical"
+        android:paddingHorizontal="10dp"
+        android:background="@color/red_main">
+
+        <TextView
+            android:id="@+id/schedule_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="@color/white"
+            android:textSize="14sp"
+            android:text="@string/atividade"
+            tools:ignore="RelativeOverlap" />
+
+    </LinearLayout>
+    <RelativeLayout
+        android:padding="10dp"
+        android:layout_marginTop="40dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+
+
+        <TextView
+            android:id="@+id/schedule_locate"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/local_da_atividade"
+            android:textSize="12sp"
+            />
+        <TextView
+            android:id="@+id/schedule_description"
+            android:layout_marginTop="10dp"
+            android:layout_width="wrap_content"
+            android:maxWidth="220dp"
+            android:layout_height="wrap_content"
+            android:maxHeight="70dp"
+            android:maxLength="150"
+            android:layout_alignParentStart="true"
+            android:layout_below="@id/schedule_locate"
+            android:text="@string/descri_o_da_atividade"
+            android:textSize="12sp"
+            android:textColor="@color/gray_text"
+            />
+
+        <TextView
+            android:id="@+id/schedule_date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@id/schedule_type"
+            android:layout_alignParentEnd="true"
+            android:layout_marginBottom="10dp"
+            android:text="@string/data_da_atividade"
+            />
+
+        <TextView
+            android:id="@+id/start_at"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_above="@id/end_at"
+            android:text="@string/in_cio"/>
+
+        <TextView
+            android:id="@+id/end_at"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentBottom="true"
+            android:text="@string/fim"/>
+
+        <TextView
+            android:id="@+id/schedule_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentEnd="true"
+            android:layout_alignParentTop="true"
+            android:text="@string/bloco_da_atividade"/>
+
+    </RelativeLayout>
+
+</com.google.android.material.card.MaterialCardView>

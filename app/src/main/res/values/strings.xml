@@ -10,4 +10,24 @@
     <string name="descricao_palestrante">Descricao do candidato listado aqui para ser exibido aos usuários finais</string>
     <string name="conheca">Conheça</string>
     <string name="carregando_imagem">Carregando Imagem</string>
+    <string name="_12_de_novembro">12 de Novembro</string>
+    <string name="local_da_atividade">Local da atividade</string>
+    <string name="descri_o_da_atividade">descrição da atividade</string>
+    <string name="atividade">Atividade</string>
+    <string name="in_cio">Início</string>
+    <string name="fim">Fim</string>
+    <string name="bloco_da_atividade">Bloco da Atividade</string>
+    <string name="cone_do_app">Ícone do app</string>
+    <string name="data_da_atividade">Data da atividade</string>
+    <string name="parceiros">Parceiros</string>
+    <string name="apoio">apoio</string>
+    <string name="patroc_nio">Patrocínio</string>
+    <string name="meet_xp_2023">MEET XP 2023</string>
+    <string name="mapa_do_evento">Mapa do evento</string>
+    <string name="social">Social</string>
+    <string name="imagem_de_entrada_do_app">Imagem de entrada do app</string>
+    <string name="fotos_do_drive">Fotos do drive</string>
+    <string name="redes_sociais">Redes Sociais</string>
+    <string name="atividades">Atividades</string>
+    <string name="verificando_conex_o_com_internet">Verificando Conexão com internet...</string>
 </resources>

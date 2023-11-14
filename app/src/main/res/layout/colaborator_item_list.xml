@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.cardview.widget.CardView
+    android:layout_width="170dp"
+    android:layout_height="170dp"
+    android:layout_margin="5dp"
+    app:cardElevation="4dp"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    app:cardCornerRadius="10dp"
+    style="@style/Widget.Material3.CardView.Elevated"
+    >
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <ImageView
+            android:id="@+id/colaborator_image"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_centerInParent="true"
+            android:contentDescription="@string/apoio" />
+
+        <TextView
+            android:id="@+id/colaborator_class"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true"
+            android:layout_alignParentStart="true"
+            android:textStyle="bold"
+            android:elevation="5dp"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:layout_margin="10dp"
+            android:text="@string/patroc_nio"/>
+
+
+    </RelativeLayout>
+</androidx.cardview.widget.CardView>

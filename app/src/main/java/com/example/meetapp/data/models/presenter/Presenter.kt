@@ -10,5 +10,5 @@ data class Presenter(
     val descricao: String,
     val imagem: String,
     val ordem: Int,
-    val atividades: JsonArray
+    val atividades: JsonArray? = null
 )

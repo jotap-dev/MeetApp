@@ -2,16 +2,80 @@
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    android:padding="20dp">
 
-    <TextView
-        android:id="@+id/pagina_inicial"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="@string/p_gina_inicial"
-        app:layout_constraintBottom_toBottomOf="parent"
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:background="@drawable/colaborator_item_shape"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:contentDescription="@string/imagem_de_entrada_do_app"
+        android:scaleType="centerCrop"
+        android:adjustViewBounds="true"
+        />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/meet_xp_2023"
+        android:layout_margin="10dp"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        android:textColor="@color/white"
+        app:layout_constraintBottom_toBottomOf="@id/imageView"
+        app:layout_constraintStart_toStartOf="@id/imageView"/>
+
+    <TextView
+        android:id="@+id/action_button_1"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:padding="15dp"
+        android:text="@string/mapa_do_evento"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        android:clickable="true"
+        android:background="@drawable/home_page_button_shape"
+        app:drawableStartCompat="@drawable/baseline_map_24"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+    <TextView
+        android:id="@+id/action_button_2"
+        android:clickable="true"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:padding="15dp"
+        android:background="@drawable/home_page_button_shape"
+        app:drawableStartCompat="@drawable/baseline_add_to_drive_24"
+        android:text="@string/fotos_do_drive"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        app:layout_constraintStart_toEndOf="@id/action_button_1"
+        app:layout_constraintEnd_toStartOf="@id/action_button_3"
+        app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+    <TextView
+        android:id="@+id/action_button_3"
+        android:padding="15dp"
+        android:clickable="true"
+        app:drawableStartCompat="@drawable/baseline_person_add"
+        android:layout_width="110dp"
+        android:layout_height="60dp"
+        android:layout_marginTop="15dp"
+        android:background="@drawable/home_page_button_shape"
+        android:contentDescription="@string/social"
+        android:text="@string/redes_sociais"
+        android:textAlignment="textStart"
+        android:textColor="@color/white"
+        android:textSize="11sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

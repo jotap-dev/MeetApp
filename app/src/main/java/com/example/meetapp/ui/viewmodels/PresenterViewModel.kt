@@ -32,9 +32,6 @@ class PresenterViewModel constructor(private val repository: PresentersRepositor
                     val array = response.body()?.get("palestrantes")
                     val list : MutableList<Presenter> = mutableListOf()
                     Log.i("RESPOSTA: " , array.toString())
-                    if (array != null) {
-                        Log.i("RESPOSTA: " , array.asJsonArray.toString())
-                    }
 
                     if (array != null) {
                         for (i in array.asJsonArray){
@@ -48,10 +45,8 @@ class PresenterViewModel constructor(private val repository: PresentersRepositor
                                 item.get("ordem").toString().toInt(),
                                 item.get("atividades").asJsonArray,
                             )
-                            Log.i("PRESENTER :", presenter.toString())
                             list.add(presenter)
                         }
-                        Log.i("LISTA:", list.toString())
                     }
 
                     allPresentersList.postValue(list)

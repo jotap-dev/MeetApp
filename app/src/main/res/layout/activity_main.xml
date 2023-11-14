@@ -26,9 +26,14 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:minHeight="?attr/actionBarSize"
-                app:title="MeetApp"
-                app:titleCentered="true"
-                app:titleTextColor="@color/white" />
+                />
+
+            <ImageView
+                android:layout_centerInParent="true"
+                android:layout_width="40dp"
+                android:layout_height="40dp"
+                android:src="@drawable/meet_white"
+                android:contentDescription="@string/cone_do_app" />
 
             <androidx.appcompat.widget.AppCompatImageButton
                 android:layout_width="48dp"
@@ -58,7 +63,7 @@
         app:itemActiveIndicatorStyle="@style/App.Custom.Indicator"
         app:menu="@menu/main_bottom_navigation_view"
         android:layout_height="wrap_content"
-        android:background="@color/white"
+        android:background="@color/red_main"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"/>

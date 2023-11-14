@@ -33,18 +33,23 @@ class MainActivity : AppCompatActivity() {
         //Alterar a página do view pager ao selecionar um item na bottom navigation view
         binding.bottomNavigationView.setOnItemSelectedListener { item ->
             when (item.itemId) {
-                R.id.event_calendar -> {
+                R.id.home_page -> {
                     viewPager2.setCurrentItem(0, true)
                     true
                 }
 
-                R.id.home_page -> {
+                R.id.colaborators -> {
                     viewPager2.setCurrentItem(1, true)
                     true
                 }
 
-                R.id.presenters -> {
+                R.id.event_calendar -> {
                     viewPager2.setCurrentItem(2, true)
+                    true
+                }
+
+                R.id.presenters -> {
+                    viewPager2.setCurrentItem(3, true)
                     true
                 }
 
@@ -55,9 +60,10 @@ class MainActivity : AppCompatActivity() {
         viewPager2.registerOnPageChangeCallback(object : ViewPager2.OnPageChangeCallback() {
             override fun onPageSelected(position: Int) {
                 when (position) {
-                    0 -> binding.bottomNavigationView.selectedItemId = R.id.event_calendar
-                    1 -> binding.bottomNavigationView.selectedItemId = R.id.home_page
-                    2 -> binding.bottomNavigationView.selectedItemId = R.id.presenters
+                    0 -> binding.bottomNavigationView.selectedItemId = R.id.home_page
+                    1 -> binding.bottomNavigationView.selectedItemId = R.id.colaborators
+                    2 -> binding.bottomNavigationView.selectedItemId = R.id.event_calendar
+                    3 -> binding.bottomNavigationView.selectedItemId = R.id.presenters
                 }
                 super.onPageSelected(position)
             }
