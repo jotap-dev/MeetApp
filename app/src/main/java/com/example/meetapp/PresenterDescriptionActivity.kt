@@ -21,14 +21,16 @@ class PresenterDescriptionActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_presenter_description)
 
+
+        this.recyclerView = binding.recyclerViewPresentersDesc
+        binding.recyclerViewPresentersDesc.layoutManager = LinearLayoutManager(this)
+        binding.recyclerViewPresentersDesc.adapter = adapter
+
+
     }
 
     override fun onStart() {
         super.onStart()
-
-        this.recyclerView = binding.recyclerViewPresentersDesc
-        recyclerView.adapter = adapter
-        recyclerView.layoutManager = LinearLayoutManager(this)
 
         val list : MutableList<Schedule> = mutableListOf()
 

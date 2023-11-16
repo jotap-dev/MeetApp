@@ -23,7 +23,7 @@ import com.example.meetapp.ui.viewmodels.PresenterViewModelFactory
 
 class PresentersFragment: Fragment() {
     private val adapter = PresentersListAdapter{presenter ->
-        openPresenter(presenter)
+        //openPresenter(presenter)
     }
     private lateinit var recyclerView: RecyclerView
     private lateinit var binding: FragmentPresentersBinding
